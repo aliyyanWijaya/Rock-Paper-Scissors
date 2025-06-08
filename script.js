@@ -70,6 +70,13 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
+// Write the logic to play the game
 function playGame() {
+    // #1 initialize the game, ask the human to choose
 
+    // #2 record the result, increase the score and the result
+
+    // #3 play the round 5 times
+
+    // #4 finish the game, print the result to the console
 }
