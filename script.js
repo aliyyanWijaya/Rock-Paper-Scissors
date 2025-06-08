@@ -26,42 +26,42 @@ function getHumanChoice() {
 }
 
 function printScore() {
-    console.log("The score is:");
+    console.log(playRound());
     console.log("Human score: " + humanScore);
     console.log("Computer score: " + computerScore);
 }
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock" && computerChoice == "rock") {
-        return "The game tie!";
+        return "The game tie! You both chose rock";
     } else if (humanChoice == "rock" && computerChoice == "paper") {
         computerScore++;
         printScore();
-        return "Computer won!";
+        return "Computer won! paper beats rock";
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
         humanScore++;
         printScore();
-        return "Human won!";
+        return "Human won! rock beats scissors";
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         humanScore++;
         printScore();
-        return "Human won!";
+        return "Human won! paper beats rock";
     } else if (humanChoice == "paper" && computerChoice == "paper") {
-        return "The game tie!";
+        return "The game tie! you both chose paper";
     } else if (humanChoice == "paper" && computerChoice == "scissors") {
         computerScore++;
         printScore();
-        return "Computer won!";
+        return "Computer won! scissors beat paper";
     } else if (humanChoice == "scissors" && computerChoice == "rock") {
         computerScore++;
         printScore();
-        return "Computer won!";
+        return "Computer won! rock beats scissors";
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
         humanScore++;
         printScore();
         return "Human won!";
     } else if (humanChoice == "scissors" && computerChoice == "scissors") {
-        return "The game tie!";
+        return "The game tie! you both chose scissors";
     } 
 }
 
@@ -69,3 +69,7 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
+
+function playGame() {
+
+}
