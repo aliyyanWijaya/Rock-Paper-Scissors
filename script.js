@@ -32,37 +32,40 @@ function printScore() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    if (humanChoise == "rock" && computerChoice == "rock") {
+    if (humanChoice == "rock" && computerChoice == "rock") {
         return "The game tie!";
-    } else if (humanChoise == "rock" && computerChoice == "paper") {
-        computerChoice++;
+    } else if (humanChoice == "rock" && computerChoice == "paper") {
+        computerScore++;
         printScore();
         return "Computer won!";
-    } else if (humanChoise == "rock" && computerChoice == "scissors") {
-        humanChoice++;
+    } else if (humanChoice == "rock" && computerChoice == "scissors") {
+        humanScore++;
         printScore();
         return "Human won!";
-    } else if (humanChoise == "paper" && computerChoice == "rock") {
-        humanChoice++;
+    } else if (humanChoice == "paper" && computerChoice == "rock") {
+        humanScore++;
         printScore();
         return "Human won!";
-    } else if (humanChoise == "paper" && computerChoice == "paper") {
+    } else if (humanChoice == "paper" && computerChoice == "paper") {
         return "The game tie!";
-    } else if (humanChoise == "paper" && computerChoice == "scissors") {
-        computerChoice++;
+    } else if (humanChoice == "paper" && computerChoice == "scissors") {
+        computerScore++;
         printScore();
         return "Computer won!";
-    } else if (humanChoise == "scissors" && computerChoice == "rock") {
-        computerChoice++;
+    } else if (humanChoice == "scissors" && computerChoice == "rock") {
+        computerScore++;
         printScore();
         return "Computer won!";
-    } else if (humanChoise == "scissors" && computerChoice == "paper") {
-        humanChoice++;
+    } else if (humanChoice == "scissors" && computerChoice == "paper") {
+        humanScore++;
         printScore();
         return "Human won!";
-    } else if (humanChoise == "scissors" && computerChoice == "scissors") {
+    } else if (humanChoice == "scissors" && computerChoice == "scissors") {
         return "The game tie!";
     } 
 }
 
-console.log(getHumanChoice());
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
