@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     const getRandomNum = Math.floor(Math.random() * 10);
     if (getRandomNum < 2) {
