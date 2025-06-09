@@ -4,10 +4,13 @@ let computerScore = 0;
 function getComputerChoice() {
     const getRandomNum = Math.floor(Math.random() * 10);
     if (getRandomNum < 2) {
+        console.log("Computer randomly chose rock");
         return "rock";
     } else if(getRandomNum < 6) {
+        console.log("Computer randomly chose paper");
         return "paper";
     } else {
+        console.log("Computer randomly chose scissors");
         return "scissors";
     }
 }
