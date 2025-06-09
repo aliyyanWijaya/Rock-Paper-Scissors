@@ -41,43 +41,44 @@ function playRound(humanChoice, computerChoice) {
         console.log("The game tie! You both chose rock");
     } else if (humanChoice == "rock" && computerChoice == "paper") {
         computerScore++;
-        printScore();
         console.log("Computer won! paper beats rock");
+        printScore();
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
         humanScore++;
-        printScore();
         console.log("Human won! rock beats scissors");
+        printScore();
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         humanScore++;
-        printScore();
         console.log("Human won! paper beats rock");
+        printScore();
     } else if (humanChoice == "paper" && computerChoice == "paper") {
         console.log("The game tie! you both chose paper");
     } else if (humanChoice == "paper" && computerChoice == "scissors") {
         computerScore++;
-        printScore();
         console.log("Computer won! scissors beat paper");
+        printScore();
     } else if (humanChoice == "scissors" && computerChoice == "rock") {
         computerScore++;
-        printScore();
         console.log("Computer won! rock beats scissors");
+        printScore();
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
         humanScore++;
-        printScore();
         console.log("Human won!");
+        printScore();
     } else if (humanChoice == "scissors" && computerChoice == "scissors") {
         console.log("The game tie! you both chose scissors");
-    } 
+    }
+    console.log("\n");
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 function gameResult() {
     if (humanScore > computerScore) {
         console.log("after 5 rounds, human shows that they can beat computer!");
-    } if (computerScore > humanScore) {
-        console.log("after 5 rounds, it shows that AI has already beaten human!")
+    } else if (computerScore > humanScore) {
+        console.log("after 5 rounds, it shows that AI has already beaten human!");
+    } else {
+        console.log("the game tie!");
     }
 }
 
@@ -90,8 +91,10 @@ function playGame() {
 
     // #3 play the round 5 times, return
     while (roundNum < 5) {
-        getHumanChoice();
-        getComputerChoice();
+        console.log(`Round ${roundNum + 1}`);
+        console.log("====================");
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
         roundNum++;
     }
