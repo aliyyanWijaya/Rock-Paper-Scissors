@@ -18,10 +18,13 @@ function getComputerChoice() {
 function getHumanChoice() {
     let userInput = prompt("Type 1 - 3 to choose your player. 1 - Rock, 2 - Paper, 3 - Scissors");
     if (userInput == 1) {
+        console.log("you chose rock");
         return "rock";
     } else if (userInput == 2) {
+        console.log("you chose paper");
         return "paper";
     } else if (userInput == 3) {
+        console.log("you chose scissors");
         return "scissors";
     } else {
         return "you didn't type the available options";
