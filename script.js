@@ -81,26 +81,3 @@ function gameResult() {
         console.log("the game tie!");
     }
 }
-
-// Write the logic to play the game
-function playGame() {
-    // #1 initialize the game, ask the human to choose
-    let roundNum = 0;
-
-    // #2 record the result, increase the score and the result
-
-    // #3 play the round 5 times, return
-    while (roundNum < 5) {
-        console.log(`Round ${roundNum + 1}`);
-        console.log("====================");
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        roundNum++;
-    }
-
-    // #4 finish the game, print the result to the console
-    gameResult();
-}
-
-playGame();
