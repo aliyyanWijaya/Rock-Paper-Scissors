@@ -1,5 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
+const humanScoreDisplay = document.querySelector(".human-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
 
 function getComputerChoice() {
     const getRandomNum = Math.floor(Math.random() * 10);
@@ -36,6 +38,11 @@ function printScore() {
     console.log("Computer score: " + computerScore);
 }
 
+function displayScore() {
+    humanScoreDisplay.innerText = humanScore;
+    computerScoreDisplay.innerText = computerScore;
+}
+
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock" && computerChoice == "rock") {
         console.log("The game tie! You both chose rock");
@@ -43,28 +50,34 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         console.log("Computer won! paper beats rock");
         printScore();
+        displayScore();
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
         humanScore++;
         console.log("Human won! rock beats scissors");
         printScore();
+        displayScore();
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         humanScore++;
         console.log("Human won! paper beats rock");
         printScore();
+        displayScore();
     } else if (humanChoice == "paper" && computerChoice == "paper") {
         console.log("The game tie! you both chose paper");
     } else if (humanChoice == "paper" && computerChoice == "scissors") {
         computerScore++;
         console.log("Computer won! scissors beat paper");
         printScore();
+        displayScore();
     } else if (humanChoice == "scissors" && computerChoice == "rock") {
         computerScore++;
         console.log("Computer won! rock beats scissors");
         printScore();
+        displayScore();
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
         humanScore++;
         console.log("Human won!");
         printScore();
+        displayScore();
     } else if (humanChoice == "scissors" && computerChoice == "scissors") {
         console.log("The game tie! you both chose scissors");
     }
@@ -89,5 +102,8 @@ button.addEventListener("click", () => {
     const buttonValue = button.innerText.toLowerCase();
     console.log("you chose: " + buttonValue);
     playRound(buttonValue, getComputerChoice());
+    // update score human and computer
+
+    // display the result to div html
 })
 })
