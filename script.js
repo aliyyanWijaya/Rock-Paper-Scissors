@@ -81,3 +81,13 @@ function gameResult() {
         console.log("the game tie!");
     }
 }
+
+const myButton = document.querySelectorAll("button");
+
+myButton.forEach((button) => {
+button.addEventListener("click", () => {
+    const buttonValue = button.innerText.toLowerCase();
+    console.log("you chose: " + buttonValue);
+    playRound(buttonValue, getComputerChoice());
+})
+})
