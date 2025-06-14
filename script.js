@@ -4,7 +4,9 @@ const humanScoreDisplay = document.querySelector(".human-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 const gameResultDisplay = document.querySelector(".printout");
 const playerDisplay = document.querySelector(".player-display");
-const computerDisplay = document.querySelector(".computer-display")
+const computerDisplay = document.querySelector(".computer-display");
+const buttonContainer = document.querySelector(".button-container");
+
 
 function getComputerChoice() {
     const getRandomNum = Math.floor(Math.random() * 10);
@@ -120,10 +122,12 @@ button.addEventListener("click", () => {
     playRound(buttonValue, getComputerChoice());
 
     if(humanScore == 5) {
+       buttonContainer.remove();
         computerDisplay.innerText = "";
         playerDisplay.innerText = "";
         gameResultDisplay.innerText = "The game ends, human won!";
     } else if (computerScore == 5) {
+        buttonContainer.remove();
         computerDisplay.innerText = "";
         playerDisplay.innerText = "";
         gameResultDisplay.innerText = "The game ends, AI shows that humant cannot win against computer!";
